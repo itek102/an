@@ -71,7 +71,7 @@
 				<a href='http://ok.ru/group/52575969673281' target='blank'><img class='soc-block-img' src="<?=base_url()?>images/icons/ok.png"></a>
 				<a href='https://vk.com/club114722027' target='blank'><img class='soc-block-img' src="<?=base_url()?>images/icons/vk.png"></a>
 			</div>
-			<ul class='navbar navbar-inverse'>
+			<ul class='navbar navbar-inverse' role="navigation">
 				<? foreach ($nav as $item):?>
 				<li class='menu-item'><a href='<?=base_url()?>first/pages/<?=$item['link']?>'><?=$item['title']?></a></li>
 			<? endforeach;?>
