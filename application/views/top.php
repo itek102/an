@@ -52,8 +52,7 @@
 		</script>
 	</head>
 	<body>
-	<div id='wrapper'>
-		<div id='top'></div>
+	<div class='container-fluid'>
 		<div id='nav'>
 			<div id='logo'><img src="<?=base_url()?>images/logo.png"></div>
 			<div id='slogan'>
@@ -67,21 +66,19 @@
 				<p id='contact-mail'><img class='contact-img' src="<?=base_url()?>images/mail.png">krrost56@mail.ru</p>
 			</div>
 		</div>
-		<div id='menu'>
+
 			<div id='soc-block'>
 				<a href='http://ok.ru/group/52575969673281' target='blank'><img class='soc-block-img' src="<?=base_url()?>images/icons/ok.png"></a>
 				<a href='https://vk.com/club114722027' target='blank'><img class='soc-block-img' src="<?=base_url()?>images/icons/vk.png"></a>
 			</div>
-			<ul id='main-menu'>
-				<li class='home-link'><a href='<?=base_url()?>'><img class='contact-img' src="<?=base_url()?>images/home-white.png"></a></li>
+			<ul class='navbar navbar-inverse'>
 				<? foreach ($nav as $item):?>
 				<li class='menu-item'><a href='<?=base_url()?>first/pages/<?=$item['link']?>'><?=$item['title']?></a></li>
 			<? endforeach;?>
 			</ul>
 			
-		</div>
-		<div id='content'>
-	<div class="container">
+
+	<div class="container-fluid">
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">

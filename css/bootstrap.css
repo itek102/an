@@ -1128,7 +1128,7 @@ img {
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
   display: block;
-  max-width: 800px;
+  max-width: 100%;
   height: auto;
 }
 .img-rounded {
@@ -6424,7 +6424,7 @@ button.close {
 }
 .carousel-caption {
   position: absolute;
-  width: 340px;
+  width: 500px;
   height: 100%;
   /* left: 15%; */
   right: 15%;
