@@ -273,5 +273,9 @@ class First extends CI_Controller {
         $this->load->view('posts/ajax-pagination-data', $data, false);
     }
 
+    public function gallery() {
+      $this->load->view('gallery');
+    }
+
 }
 

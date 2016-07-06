@@ -1,11 +1,23 @@
 <html>
 	<head>
 		<title>Агентство недвижимости "Кррост"</title>
+
 		<link rel="stylesheet" type="text/css" href="<?=base_url()?>css/style.css" />
 		<link rel="stylesheet" type="text/css" href="<?=base_url()?>css/orbit.css" />
         <link rel="stylesheet" type="text/css" href="<?=base_url()?>css/elastislide.css" />
 		<script type="text/javascript" src="<?=base_url()?>js/query.js"></script>
 		<script type="text/javascript" src="<?=base_url()?>js/jquery.orbit.js"></script>
+		    <!-- Bootstrap -->
+    <link href="<?=base_url()?>css/bootstrap.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="<?=base_url()?>js/bootstrap.js"></script>
 		<script type="text/javascript">
 			$(window).load(function() {
 				$('#inform-slide').orbit({
@@ -69,31 +81,35 @@
 			
 		</div>
 		<div id='content'>
-			<div id='infrom'>
-				<div id='inform-slide'>
-					<? foreach ($slide as $item): ?>
-					<img src="<?=base_url()?>images/slide/<?=$item['img']?>" alt="" rel='ts<?=$item['id']?>' />
-				<? endforeach; ?>
-				</div>
-				<? foreach ($slide as $item): ?>
-					<span class="orbit-caption" id="ts<?=$item['id']?>">
-						<?=$item['text']?>
-				<p class='inform-text'>Контактные телефоны агентов: <br>
-					<? if ($item['agent']==0) {
-						$this->db->order_by('id','random');
-						$a= $this->db->get('agent');
-						foreach ($a->result() as $item2) {
-							echo $item2->name.": ".$item2->tel."</br>";
-						}
-					} else {
-						$this->db->where('id',$item['agent']);
-						$a= $this->db->get('agent');
-						$a = $a->row_array();
-						echo $a['name'].': '.$a['tel'];
-					}?></p>
-					</span>
-					<? endforeach; ?>
-			</div>
+	<div class="container">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="../images/slide/1.jpg" alt="...">
+      <div class="carousel-caption caption-slide">
+        Полное описание слайда 1
+      </div>
+    </div>
+    <div class="item">
+      <img src="../images/slide/2.jpg" alt="...">
+      <div class="carousel-caption">
+        Полное описание слайда 2
+      </div>
+    </div>
+    <div class="item">
+      <img src="../images/slide/3.jpg" alt="...">
+      <div class="carousel-caption">
+        Полное описание слайда 3
+      </div>
+    </div>
 
 			<div id='search'>
 				<select id='sale-home' class='search-home'>
