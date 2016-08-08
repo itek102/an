@@ -15,11 +15,15 @@
 					}
 					$this->db->where('id',$room['agent']);
 					$b = $this->db->get('agent');
+					if ($b->num_rows()!=0) {
 					$b = $b->row_array();
 					$room['agent'] = $b['name'].': '.$b['tel'];
+					} else {
+						$room['agent'] = 'Наталья: 28-06-90';
+					}
 					 ?>
 					<img class='ob-img' src="<?=base_url()?>images/ob/<?=$room['main_img']?>">
-					<div class='ob-text-content'><h3 class='ob-title'><?=$room['title']?></h3>
+					<div class='ob-text-content'><h3 class='ob-title'><a class="title-ob-link" href="<?=base_url()?>first/fr/<?=$room['id']?>"><?=$room['title']?></a></h3>
 <p class='ob-text'><span class='ob-text-title'>Адрес:          </span> <?=$room['adres']?></p>
 <p class='ob-text'><span class='ob-text-title'>Цена:          </span> <?=$room['cena']?> руб.</p>
 <p class='ob-text'><span class='ob-text-title'>Комнат:        </span> <?=$room['col_room']?></p>
@@ -41,4 +45,4 @@
      
         <?php echo $this->ajax_pagination->create_links(); ?>
 				
-			   </ul> </div>
+			   </ul> 

@@ -13,7 +13,12 @@
 					$this->db->where('id',$room['agent']);
 					$b = $this->db->get('agent');
 					$b = $b->row_array();
+					if ($b->num_rows()!=0) {
+					$b = $b->row_array();
 					$room['agent'] = $b['name'].': '.$b['tel'];
+					} else {
+						$room['agent'] = 'Наталья: 28-06-90';
+					}
 					 ?>
 					<img class='ob-img' src="<?=base_url()?>images/ob/<?=$room['main_img']?>">
 					<div class='ob-text-content'><h3 class='ob-title'><?=$room['title']?></h3>

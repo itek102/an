@@ -19,7 +19,7 @@
 					$room['agent'] = $b['name'].': '.$b['tel'];
 					 ?>
 					<img class='ob-img' src="<?=base_url()?>images/ob/<?=$room['main_img']?>">
-					<div class='ob-text-content'><h3 class='ob-title'><?=$room['title']?></h3>
+					<div class='ob-text-content'><h3 class='ob-title'><a class="title-ob-link" href="<?=base_url()?>first/fr/<?=$room['id']?>"><?=$room['title']?></a></h3>
 <p class='ob-text'><span class='ob-text-title'>Адрес:          </span> <?=$room['adres']?></p>
 <p class='ob-text'><span class='ob-text-title'>Цена:          </span> <?=$room['cena']?> руб.</p>
 <p class='ob-text'><span class='ob-text-title'>Комнат:        </span> <?=$room['col_room']?></p>
